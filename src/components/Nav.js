@@ -1,118 +1,92 @@
-/**
- * components/Nav.js — Navigation component
- *
- * Responsibilities:
- *  - Track scroll position and apply scrolled state class
- *  - Handle theme toggle button
- *  - Subscribe to store for theme changes (update toggle label)
- *  - Manage mobile menu open/close
- *
- * No animations here — all visual transitions via CSS.
- * No global DOM queries — all queries scoped to root.
- */
+import store from "../store.js";
+import { qs } from "../utils/dom.js";
+import { addListeners, throttle } from "../utils/events.js";
 
-import store from '../store.js'
-import ThemeManager from '../theme.js'
-import { qs } from '../utils/dom.js'
-import { addListeners, throttle } from '../utils/events.js'
-
-/**
- * @param {Element} root — The <nav> element
- * @returns {{ init: () => void, destroy: () => void }}
- */
 const Nav = (root) => {
-    // ─── Internal state ──────────────────────────────────────────────────────
-    let _cleanupListeners = null
-    let _unsubTheme = null
+  let _cleanupListeners = null;
+  const _menuToggle = qs("[data-menu-toggle]", document);
+  const _menuOverlay = qs("[data-menu-overlay]", document);
+  const _desktopNav = qs("#desktop-nav", document);
+  const _navHeader = qs("#nav-header", document);
+  const _menuItems = document.querySelectorAll("[data-menu-item]");
+  
+  const _onScroll = throttle(() => {
+    const scrolled = window.scrollY > 40;
+    if (_navHeader) {
+      // Use solid white background instead of reflection/blur
+      _navHeader.classList.toggle("bg-[#f5f5f5]", scrolled);
+    }
+    store.set("isNavScrolled", scrolled);
+    store.set("scrollY", window.scrollY);
+  }, 100);
 
-    // ─── DOM refs (scoped to root) ───────────────────────────────────────────
-    const _themeToggle = qs('[data-theme-toggle]', root)
-    const _menuToggle = qs('[data-menu-toggle]', root)
-    const _mobileMenu = qs('[data-mobile-menu]', root)
-    const _menuOverlay = qs('[data-menu-overlay]', root)
-
-    // ─── Handlers ────────────────────────────────────────────────────────────
-
-    const _onScroll = throttle(() => {
-        const scrolled = window.scrollY > 40
-        root.classList.toggle('scrolled', scrolled)
-        store.set('isNavScrolled', scrolled)
-        store.set('scrollY', window.scrollY)
-    }, 100)
-
-    const _onThemeToggle = () => {
-        ThemeManager.toggle()
+  const _setMenuOpen = (open) => {
+    if (!_menuOverlay) return;
+    document.body.style.overflow = open ? "hidden" : "";
+    if (_menuToggle) _menuToggle.setAttribute("aria-expanded", String(open));
+    
+    // Hide standard desktop nav links smoothly when menu opens
+    if (_desktopNav) {
+        _desktopNav.style.transition = "opacity 0.3s ease";
+        _desktopNav.style.opacity = open ? "0" : "1";
+        _desktopNav.style.pointerEvents = open ? "none" : "auto";
     }
 
-    const _onMenuToggle = () => {
-        const isOpen = _mobileMenu?.getAttribute('aria-hidden') === 'false'
-        _setMenuOpen(!isOpen)
+    if (open) {
+      _menuOverlay.style.opacity = "1";
+      _menuOverlay.style.pointerEvents = "auto";
+      _menuOverlay.classList.remove("translate-y-4");
+      _menuOverlay.classList.add("translate-y-0");
+      
+      _menuItems.forEach((el) => {
+        el.classList.remove("opacity-0", "translate-y-4", "translate-y-2");
+        el.classList.add("opacity-100", "translate-y-0");
+      });
+    } else {
+      _menuOverlay.style.opacity = "0";
+      _menuOverlay.style.pointerEvents = "none";
+      _menuOverlay.classList.remove("translate-y-0");
+      _menuOverlay.classList.add("translate-y-4");
+      
+      _menuItems.forEach((el) => {
+        el.classList.remove("opacity-100", "translate-y-0");
+        el.classList.add("opacity-0", "translate-y-4");
+      });
     }
+  };
 
-    const _onOverlayClick = () => {
-        _setMenuOpen(false)
-    }
+  const _onMenuToggle = () => {
+    const isOpen = _menuToggle.getAttribute("aria-expanded") === "true";
+    _setMenuOpen(!isOpen);
+  };
+  
+  const _onMenuClose = () => _setMenuOpen(false);
+  const _onKeydown = (e) => { if (e.key === "Escape") _setMenuOpen(false); };
 
-    const _onKeydown = (e) => {
-        if (e.key === 'Escape') _setMenuOpen(false)
-    }
+  const init = () => {
+    _onScroll();
+    const listeners = [
+      [window, "scroll", _onScroll, { passive: true }],
+      [document, "keydown", _onKeydown],
+    ];
+    if (_menuToggle) listeners.push([_menuToggle, "click", _onMenuToggle]);
+    
+    // Close menu when any link inside it is clicked
+    _menuItems.forEach(item => {
+      if(item.tagName === 'A') {
+        listeners.push([item, "click", _onMenuClose]);
+      }
+    });
 
-    // ─── Menu state ───────────────────────────────────────────────────────────
+    _cleanupListeners = addListeners(listeners);
+  };
 
-    const _setMenuOpen = (open) => {
-        if (!_mobileMenu) return
+  const destroy = () => {
+    _cleanupListeners?.();
+    _setMenuOpen(false);
+  };
 
-        _mobileMenu.setAttribute('aria-hidden', String(!open))
-        _menuToggle?.setAttribute('aria-expanded', String(open))
-        document.body.style.overflow = open ? 'hidden' : ''
+  return { init, destroy };
+};
 
-        if (_menuOverlay) {
-            _menuOverlay.style.opacity = open ? '1' : '0'
-            _menuOverlay.style.pointerEvents = open ? 'auto' : 'none'
-        }
-    }
-
-    // ─── Theme label sync ─────────────────────────────────────────────────────
-
-    const _syncThemeLabel = (theme) => {
-        if (!_themeToggle) return
-        _themeToggle.setAttribute('aria-label', `Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`)
-        _themeToggle.setAttribute('data-current-theme', theme)
-    }
-
-    // ─── Lifecycle ────────────────────────────────────────────────────────────
-
-    const init = () => {
-        // Initial scroll check
-        _onScroll()
-
-        // Build listener list
-        const listeners = [
-            [window, 'scroll', _onScroll, { passive: true }],
-            [document, 'keydown', _onKeydown],
-        ]
-
-        if (_themeToggle) listeners.push([_themeToggle, 'click', _onThemeToggle])
-        if (_menuToggle) listeners.push([_menuToggle, 'click', _onMenuToggle])
-        if (_menuOverlay) listeners.push([_menuOverlay, 'click', _onOverlayClick])
-
-        _cleanupListeners = addListeners(listeners)
-
-        // Subscribe to theme changes in store
-        _unsubTheme = store.subscribe('theme', _syncThemeLabel)
-
-        // Initial label sync
-        _syncThemeLabel(store.get('theme'))
-    }
-
-    const destroy = () => {
-        _cleanupListeners?.()
-        _unsubTheme?.()
-        _setMenuOpen(false)
-        document.body.style.overflow = ''
-    }
-
-    return { init, destroy }
-}
-
-export default Nav
+export default Nav;

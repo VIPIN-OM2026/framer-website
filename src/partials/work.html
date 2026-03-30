@@ -1,112 +1,143 @@
-<!-- SAVE AS: src/partials/work.html -->
+<section id="work" class="section-light py-[12vh]" aria-labelledby="work-heading">
+<div class="container px-6 md:px-10 lg:px-14 max-w-[1520px] mx-auto">
 
-<!-- ── Work / Projects ─────────────────────────────────────────── -->
-<section id="work" class="work section" aria-labelledby="work-heading">
-
-    <div class="work__header">
+    <!-- Header -->
+    <div class="flex justify-between items-end mb-3">
+        <span class="section-label">Our clients</span>
+        <span class="text-xs font-mono text-black/25 hidden md:block">(2016-25©)</span>
+    </div>
+    <div class="flex justify-between items-end mb-5">
         <div>
-            <span class="label will-animate">Selected work</span>
-            <h2 id="work-heading" class="h2 will-animate" style="margin-top:var(--space-sm)">
-                Projects.
-            </h2>
+            <span class="section-label">(27)</span>
+            <h2 id="work-heading" data-work-heading class="text-4xl md:text-5xl font-semibold tracking-tighter text-[#0a0a0a]" style="font-family:var(--font-display); letter-spacing:-0.05em;">Projects.</h2>
         </div>
-        <div class="work__counter will-animate">(27)</div>
+        <span class="text-xs font-mono text-black/25 hidden md:block">©2025</span>
     </div>
+    <p class="text-sm text-black/45 mb-12 max-w-md" style="line-height:1.6;">We've helped businesses across industries achieve their goals. Here are some of our recent projects.</p>
 
-    <div class="work__grid" role="list">
-
-        <!-- Item 1 -->
-        <article class="work__item will-animate" role="listitem">
-            <img class="work__item-img" src="https://framerusercontent.com/images/TQUaM9GTresksymLH16ncQaPo.jpg"
-                alt="Boltshift project — brand identity redesign" width="750" height="540" loading="lazy">
-            <div class="work__item-overlay">
-                <div class="work__item-title">Boltshift.</div>
-                <div class="work__item-meta">Branding · 2025</div>
+    <!-- Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <a href="#" data-work-card class="work-item group block rounded-2xl overflow-hidden border border-black/[0.07] aspect-[4/3] relative bg-black/5">
+            <img class="work-item-media absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1541462608143-67571c6738dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Boltshift" width="800" height="600" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="work-item-label">
+                <div class="text-white font-semibold text-lg tracking-tight">Boltshift. <span class="text-white/45 font-normal">/</span> <span class="text-white/45 font-normal text-sm">2025</span></div>
             </div>
-        </article>
-
-        <!-- Item 2 -->
-        <article class="work__item will-animate" role="listitem">
-            <img class="work__item-img" src="https://framerusercontent.com/images/r3DvXiPExOamPrqqTNfWM1K9o4.jpg"
-                alt="Ephemeral project — web design" width="750" height="540" loading="lazy">
-            <div class="work__item-overlay">
-                <div class="work__item-title">Ephemeral.</div>
-                <div class="work__item-meta">Web Design · 2025</div>
+        </a>
+        <a href="#" data-work-card class="work-item group block rounded-2xl overflow-hidden border border-black/[0.07] aspect-[4/3] relative bg-black/5">
+            <img class="work-item-media absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Ephemeral" width="800" height="600" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="work-item-label">
+                <div class="text-white font-semibold text-lg tracking-tight">Ephemeral. <span class="text-white/45 font-normal">/</span> <span class="text-white/45 font-normal text-sm">2025</span></div>
             </div>
-        </article>
-
-        <!-- Item 3 -->
-        <article class="work__item will-animate" role="listitem">
-            <img class="work__item-img" src="https://framerusercontent.com/images/UPqJOHQLdYtNuK2jee5437Lno.jpg"
-                alt="Powersurge project — digital growth" width="750" height="540" loading="lazy">
-            <div class="work__item-overlay">
-                <div class="work__item-title">Powersurge.</div>
-                <div class="work__item-meta">Digital Growth · 2024</div>
+        </a>
+        <a href="#" data-work-card class="work-item group block rounded-2xl overflow-hidden border border-black/[0.07] aspect-[4/3] relative bg-black/5">
+            <img class="work-item-media absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Powersurge" width="800" height="600" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="work-item-label">
+                <div class="text-white font-semibold text-lg tracking-tight">Powersurge. <span class="text-white/45 font-normal">/</span> <span class="text-white/45 font-normal text-sm">2024</span></div>
             </div>
-        </article>
-
-        <!-- Item 4 -->
-        <article class="work__item will-animate" role="listitem">
-            <img class="work__item-img" src="https://framerusercontent.com/images/HlvuJF9yIQ3Q8fP86EjFIq5ExE.jpg"
-                alt="Mastermail project — SEO & marketing" width="750" height="540" loading="lazy">
-            <div class="work__item-overlay">
-                <div class="work__item-title">Mastermail.</div>
-                <div class="work__item-meta">SEO Marketing · 2024</div>
+        </a>
+        <a href="#" data-work-card class="work-item group block rounded-2xl overflow-hidden border border-black/[0.07] aspect-[4/3] relative bg-black/5">
+            <img class="work-item-media absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Mastermail" width="800" height="600" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="work-item-label">
+                <div class="text-white font-semibold text-lg tracking-tight">Mastermail. <span class="text-white/45 font-normal">/</span> <span class="text-white/45 font-normal text-sm">2024</span></div>
             </div>
-        </article>
-
-    </div>
-
-    <!-- View all link -->
-    <div style="display:flex;justify-content:center;padding-top:var(--space-3xl)">
-        <a href="#" class="btn btn--ghost will-animate">
-            View all 27 projects
-            <span class="btn__arrow" aria-hidden="true">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </span>
+        </a>
+        <a href="#" data-work-card class="work-item group block rounded-2xl overflow-hidden border border-black/[0.07] aspect-[4/3] relative bg-black/5">
+            <img class="work-item-media absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Warpspeed" width="800" height="600" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="work-item-label">
+                <div class="text-white font-semibold text-lg tracking-tight">Warpspeed. <span class="text-white/45 font-normal">/</span> <span class="text-white/45 font-normal text-sm">2023</span></div>
+            </div>
+        </a>
+        <a href="#" data-work-card class="work-item group block rounded-2xl overflow-hidden border border-black/[0.07] aspect-[4/3] relative bg-black/5">
+            <img class="work-item-media absolute inset-0 w-full h-full object-cover" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="CloudWatch" width="800" height="600" loading="lazy">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            <div class="work-item-label">
+                <div class="text-white font-semibold text-lg tracking-tight">CloudWatch. <span class="text-white/45 font-normal">/</span> <span class="text-white/45 font-normal text-sm">2020</span></div>
+            </div>
         </a>
     </div>
-
-</section>
-
-<!-- ── Services ───────────────────────────────────────────────── -->
-<section id="services" class="services section" aria-labelledby="services-heading">
-
-    <div style="max-width:var(--container-max);margin:0 auto;
-              padding:0 var(--section-px);margin-bottom:var(--space-3xl)">
-        <span class="label will-animate">What we do</span>
-        <h2 id="services-heading" class="h2 will-animate" style="margin-top:var(--space-sm)">Services.</h2>
+    <div class="flex items-center mt-10 pt-6 border-t border-black/[0.07]">
+        <a href="#" class="btn btn-outline text-sm">View all 27 projects →</a>
     </div>
+</div>
 
-    <ul class="services__list" role="list">
+<!-- Services section (same light bg, same page) -->
+<div id="services" class="container px-6 md:px-10 lg:px-14 max-w-[1520px] mx-auto mt-24" aria-labelledby="services-heading">
+    <div class="flex justify-between items-end mb-2">
+        <span class="section-label">What we do</span>
+        <span class="text-xs font-mono text-black/25 hidden md:block">(4)</span>
+    </div>
+    <h2 id="services-heading" class="text-4xl md:text-5xl font-semibold tracking-tighter text-[#0a0a0a] mb-12" style="font-family:var(--font-display); letter-spacing:-0.05em;">Services.</h2>
 
-        <li class="service-item will-animate" role="listitem">
-            <span class="service-item__num">(001)</span>
-            <span class="service-item__title">Web Design &amp; Development</span>
-            <div class="service-item__arrow" aria-hidden="true"></div>
+    <ul class="flex flex-col divide-y divide-black/[0.07]">
+        <li class="py-8 flex items-start justify-between gap-8 group cursor-pointer hover:pl-3 transition-all duration-300">
+            <div class="flex items-start gap-8">
+                <span class="text-xs font-mono text-black/25 shrink-0 mt-1">(001)</span>
+                <div>
+                    <h3 class="text-xl md:text-2xl font-semibold text-[#0a0a0a] tracking-tight mb-3">Web design and development</h3>
+                    <p class="text-sm text-black/45 max-w-lg leading-relaxed">Modern, responsive, and user-friendly websites designed to engage visitors and drive conversions.</p>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span class="tag">Packaging design</span><span class="tag">Logo design</span><span class="tag">Rebranding</span>
+                        <span class="tag">Typography</span><span class="tag">Guidelines</span><span class="tag">Visual identity</span>
+                        <span class="tag">6+</span>
+                    </div>
+                </div>
+            </div>
+            <span class="text-black/25 group-hover:text-black/70 transition-colors shrink-0 mt-1 text-xl">→</span>
         </li>
-
-        <li class="service-item will-animate" role="listitem">
-            <span class="service-item__num">(002)</span>
-            <span class="service-item__title">Social Media Marketing</span>
-            <div class="service-item__arrow" aria-hidden="true"></div>
+        <li class="py-8 flex items-start justify-between gap-8 group cursor-pointer hover:pl-3 transition-all duration-300">
+            <div class="flex items-start gap-8">
+                <span class="text-xs font-mono text-black/25 shrink-0 mt-1">(002)</span>
+                <div>
+                    <h3 class="text-xl md:text-2xl font-semibold text-[#0a0a0a] tracking-tight mb-3">Social media marketing</h3>
+                    <p class="text-sm text-black/45 max-w-lg leading-relaxed">Strategic, data-driven social media campaigns designed to build brand awareness and connect with your target audience.</p>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span class="tag">Content strategy</span><span class="tag">Community management</span>
+                        <span class="tag">Paid advertising</span><span class="tag">Analytics &amp; reporting</span>
+                        <span class="tag">Platform optimization</span><span class="tag">6+</span>
+                    </div>
+                </div>
+            </div>
+            <span class="text-black/25 group-hover:text-black/70 transition-colors shrink-0 mt-1 text-xl">→</span>
         </li>
-
-        <li class="service-item will-animate" role="listitem">
-            <span class="service-item__num">(003)</span>
-            <span class="service-item__title">SEO &amp; Content Marketing</span>
-            <div class="service-item__arrow" aria-hidden="true"></div>
+        <li class="py-8 flex items-start justify-between gap-8 group cursor-pointer hover:pl-3 transition-all duration-300">
+            <div class="flex items-start gap-8">
+                <span class="text-xs font-mono text-black/25 shrink-0 mt-1">(003)</span>
+                <div>
+                    <h3 class="text-xl md:text-2xl font-semibold text-[#0a0a0a] tracking-tight mb-3">SEO and content marketing</h3>
+                    <p class="text-sm text-black/45 max-w-lg leading-relaxed">Comprehensive search optimization and engaging content that increases visibility, drives organic traffic, and establishes thought leadership.</p>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span class="tag">Keyword research</span><span class="tag">On-page optimization</span>
+                        <span class="tag">Content creation</span><span class="tag">Link building</span>
+                        <span class="tag">4+</span>
+                    </div>
+                </div>
+            </div>
+            <span class="text-black/25 group-hover:text-black/70 transition-colors shrink-0 mt-1 text-xl">→</span>
         </li>
-
-        <li class="service-item will-animate" role="listitem">
-            <span class="service-item__num">(004)</span>
-            <span class="service-item__title">Branding &amp; Identity</span>
-            <div class="service-item__arrow" aria-hidden="true"></div>
+        <li class="py-8 flex items-start justify-between gap-8 group cursor-pointer hover:pl-3 transition-all duration-300">
+            <div class="flex items-start gap-8">
+                <span class="text-xs font-mono text-black/25 shrink-0 mt-1">(004)</span>
+                <div>
+                    <h3 class="text-xl md:text-2xl font-semibold text-[#0a0a0a] tracking-tight mb-3">Branding and identity</h3>
+                    <p class="text-sm text-black/45 max-w-lg leading-relaxed">Distinctive, memorable brand experiences that communicate your values and create emotional connections with your customers.</p>
+                    <div class="flex flex-wrap gap-2 mt-4">
+                        <span class="tag">Brand strategy</span><span class="tag">Logo design</span><span class="tag">Brand voice</span>
+                        <span class="tag">Color systems</span><span class="tag">Brand guidelines</span><span class="tag">Identity applications</span>
+                        <span class="tag">6+</span>
+                    </div>
+                </div>
+            </div>
+            <span class="text-black/25 group-hover:text-black/70 transition-colors shrink-0 mt-1 text-xl">→</span>
         </li>
-
     </ul>
+    <div class="mt-10">
+        <a href="#contact" class="btn btn-primary">Get started</a>
+    </div>
+</div>
 
 </section>

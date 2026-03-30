@@ -1,47 +1,29 @@
-/* ─── Dark Theme ───────────────────────────────────────────────────────────── */
-/* Applied when: [data-theme="dark"] on <html>                                  */
-/* All values reference raw color tokens from tokens/colors.css                 */
-
+/* Dark section theme — used on marquee strip, dark cards, footer */
 [data-theme='dark'] {
-    /* Backgrounds */
-    --color-bg-primary: var(--color-black-100);
-    --color-bg-secondary: var(--color-black-200);
-    --color-bg-tertiary: var(--color-black-300);
-    --color-bg-inverse: var(--color-white-100);
-    --color-bg-surface: hsl(0, 0%, 7%);
-    --color-bg-elevated: hsl(0, 0%, 10%);
-
-    /* Text */
-    --color-text-primary: var(--color-white-100);
-    --color-text-secondary: var(--color-neutral-200);
-    --color-text-tertiary: var(--color-neutral-400);
-    --color-text-inverse: var(--color-black-100);
-    --color-text-accent: var(--color-accent-400);
-    --color-text-on-accent: var(--color-black-100);
-
-    /* Borders */
-    --color-border-subtle: hsl(0, 0%, 12%);
-    --color-border-default: hsl(0, 0%, 18%);
-    --color-border-strong: hsl(0, 0%, 28%);
-
-    /* Accent */
-    --color-accent: var(--color-accent-400);
-    --color-accent-hover: var(--color-accent-300);
-    --color-accent-muted: hsl(42, 30%, 12%);
-
-    /* Components */
-    --color-nav-bg: hsla(0, 0%, 4%, 0.88);
-    --color-card-bg: var(--color-black-200);
-    --color-card-border: var(--color-border-subtle);
-    --color-tag-bg: hsl(0, 0%, 12%);
-    --color-tag-text: var(--color-neutral-300);
-
-    /* Shadows */
-    --shadow-sm: 0 1px 3px hsla(0, 0%, 0%, 0.3), 0 1px 2px hsla(0, 0%, 0%, 0.2);
-    --shadow-md: 0 4px 16px hsla(0, 0%, 0%, 0.4), 0 2px 4px hsla(0, 0%, 0%, 0.2);
-    --shadow-lg: 0 16px 48px hsla(0, 0%, 0%, 0.5), 0 4px 12px hsla(0, 0%, 0%, 0.3);
-
-    /* Overlays */
-    --color-overlay: hsla(0, 0%, 0%, 0.6);
-    --color-scrim: hsla(0, 0%, 4%, 0.7);
+    color-scheme: dark;
+    --color-bg-primary: #121212;
+    --color-bg-secondary: #0a0a0a;
+    --color-bg-tertiary: #1a1a1a;
+    --color-text-primary: #ffffff;
+    --color-text-secondary: rgba(255,255,255,0.55);
+    --color-text-tertiary: rgba(255,255,255,0.3);
+    --color-text-inverse: #121212;
+    --color-text-accent: #ffffff;
+    --color-text-on-accent: #121212;
+    --color-accent: #ffffff;
+    --color-accent-hover: #d4d4d4;
+    --color-accent-muted: rgba(255, 255, 255, 0.1);
+    --color-border-subtle: rgba(255, 255, 255, 0.06);
+    --color-border-default: rgba(255, 255, 255, 0.1);
+    --color-border-strong: rgba(255, 255, 255, 0.25);
+    --color-nav-bg: rgba(10, 10, 10, 0.85);
+    --color-nav-border: rgba(255,255,255,0.08);
+    --color-card-bg: rgba(255, 255, 255, 0.03);
+    --color-card-border: rgba(255, 255, 255, 0.07);
+    --color-card-hover: rgba(255, 255, 255, 0.06);
+    --color-tag-bg: rgba(255, 255, 255, 0.06);
+    --color-tag-text: rgba(255,255,255,0.6);
+    --color-overlay: rgba(0, 0, 0, 0.85);
+    --theme-transition-duration: 0.3s;
+    --theme-transition-ease: ease-out;
 }

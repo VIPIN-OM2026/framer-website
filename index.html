@@ -1,42 +1,22 @@
 <!DOCTYPE html>
-<!-- SAVE AS: index.html  (project root) -->
-<html lang="en" data-theme="dark">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-        content="fabrica® Studio — Web Design, Branding & Digital Growth. No generic websites. No empty promises. Just tools and strategies that help your business grow." />
-
-    <!-- Favicon (place in /public/icons/) -->
+    <meta name="description" content="Elevate your brand with expert web design, branding, and digital marketing. Fabrica® Studio delivers strategic, high-performing solutions tailored to your business needs." />
     <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg" />
-
-    <!-- Preconnect for Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <!-- Display font: Cormorant Garamond (editorial, luxury) -->
-    <!-- Body font: DM Sans (clean, modern) -->
-    <!-- Mono font: JetBrains Mono (technical detail) -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=JetBrains+Mono:wght@400&display=swap"
-        rel="stylesheet" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Fragment+Mono&display=swap" rel="stylesheet" />
     <title><%- title %></title>
-
-    <!-- Main stylesheet (injected by Vite) -->
     <link rel="stylesheet" href="/src/styles/main.css" />
 </head>
-
-<body class="bg-bg text-fg font-body antialiased overflow-x-hidden">
-
-    <!-- ░░ Cursor ░░ -->
+<body class="antialiased overflow-x-hidden" style="background:#f5f5f5; color:#0a0a0a;">
     <div id="cursor" class="pointer-events-none fixed top-0 left-0 z-toast" aria-hidden="true">
         <div id="cursor-dot"></div>
         <div id="cursor-ring"></div>
     </div>
 
-    <!-- ░░ Page loader ░░ -->
     <div id="loader" aria-hidden="true">
         <span class="loader-wordmark">fabrica<sup>®</sup></span>
         <div class="loader-bar">
@@ -44,34 +24,23 @@
         </div>
     </div>
 
-    <!-- ░░ Navigation ░░ -->
-    <!--#include virtual="/src/partials/nav.html" -->
     <%- includeFile('./src/partials/nav.html') %>
 
-        <main id="main">
+    <main id="main">
+        <%- includeFile('./src/partials/hero.html') %>
+        <%- includeFile('./src/partials/marquee.html') %>
+        <%- includeFile('./src/partials/work.html') %>
+        <%- includeFile('./src/partials/about.html') %>
+        <%- includeFile('./src/partials/case-study.html') %>
+        <%- includeFile('./src/partials/pricing.html') %>
+        <%- includeFile('./src/partials/team.html') %>
+        <%- includeFile('./src/partials/faq.html') %>
+        <%- includeFile('./src/partials/blog.html') %>
+        <%- includeFile('./src/partials/cta.html') %>
+    </main>
 
-            <!-- ░░ Hero ░░ -->
-            <%- includeFile('./src/partials/hero.html') %>
+    <%- includeFile('./src/partials/footer.html') %>
 
-                <!-- ░░ Marquee ░░ -->
-                <%- includeFile('./src/partials/marquee.html') %>
-
-                    <!-- ░░ Work Grid ░░ -->
-                    <%- includeFile('./src/partials/work.html') %>
-
-                        <!-- ░░ About / Why Us ░░ -->
-                        <%- includeFile('./src/partials/about.html') %>
-
-                            <!-- ░░ CTA ░░ -->
-                            <%- includeFile('./src/partials/cta.html') %>
-
-        </main>
-
-        <!-- ░░ Footer ░░ -->
-        <%- includeFile('./src/partials/footer.html') %>
-
-            <!-- ░░ App entry (GSAP, components, animations) ░░ -->
-            <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/main.js"></script>
 </body>
-
 </html>

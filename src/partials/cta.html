@@ -1,77 +1,81 @@
-<!-- SAVE AS: src/partials/cta.html -->
-<section id="contact" class="cta section" aria-labelledby="cta-heading">
-
-    <div class="cta__bg" aria-hidden="true"></div>
-
-    <div class="cta__inner">
-
-        <span class="label will-animate">Have a project in mind?</span>
-
-        <h2 id="cta-heading" class="cta__title will-animate" style="margin-top:var(--space-lg)">
-            Let's build
-            <em>something<br>remarkable.</em>
-        </h2>
-
-        <p class="lead will-animate" style="margin-top:var(--space-xl);max-width:480px;margin-inline:auto">
-            Whether you need a stunning website, a sharper brand, or marketing
-            that actually converts — your digital journey starts with a conversation.
-        </p>
-
-        <div class="cta__actions will-animate">
-            <a href="mailto:hello@fabrica.com" class="btn btn--primary magnetic" data-magnetic>
-                Start a project
-                <span class="btn__arrow" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
-                </span>
-            </a>
-            <a href="tel:3125552468" class="btn btn--ghost">(312) 555-2468</a>
+<!-- "What's new in digital?" marquee strip (dark) -->
+<div class="section-dark overflow-hidden py-16 border-t border-white/[0.06]">
+    <div class="flex items-center gap-0" data-marquee-inner id="cta-marquee-inner">
+        <div class="flex items-center gap-16 flex-shrink-0" id="cta-marquee-track">
+            <span class="text-5xl md:text-6xl font-semibold tracking-tighter text-white select-none whitespace-nowrap" style="font-family:var(--font-display);">fabrica®</span>
+            <span class="text-white/20 text-3xl select-none">·</span>
+            <span class="text-5xl md:text-6xl font-semibold tracking-tighter text-white select-none whitespace-nowrap" style="font-family:var(--font-display);">What's new</span>
+            <span class="text-white/20 text-3xl select-none">·</span>
+            <span class="text-5xl md:text-6xl font-semibold tracking-tighter text-white select-none whitespace-nowrap" style="font-family:var(--font-display);">in digital?</span>
+            <span class="text-white/20 text-3xl select-none">·</span>
+            <span class="text-5xl md:text-6xl font-semibold tracking-tighter text-white/30 select-none whitespace-nowrap" style="font-family:var(--font-display);">fabrica®</span>
+            <span class="text-white/20 text-3xl select-none">·</span>
+            <span class="text-5xl md:text-6xl font-semibold tracking-tighter text-white select-none whitespace-nowrap" style="font-family:var(--font-display);">What's new</span>
+            <span class="text-white/20 text-3xl select-none">·</span>
+            <span class="text-5xl md:text-6xl font-semibold tracking-tighter text-white select-none whitespace-nowrap" style="font-family:var(--font-display);">in digital?</span>
+            <span class="text-white/20 text-3xl select-none">·</span>
         </div>
-
-        <!-- Contact card -->
-        <div class="will-animate" style="
-      margin-top: var(--space-4xl);
-      display: inline-grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: hsl(var(--color-border-subtle));
-      border: 1px solid hsl(var(--color-border-subtle));
-      border-radius: 8px;
-      overflow: hidden;
-      text-align: left;
-      max-width: 560px;
-      width: 100%">
-
-            <div style="background:hsl(var(--color-bg-surface));padding:var(--space-xl)">
-                <div class="label" style="margin-bottom:var(--space-sm)">Quick response</div>
-                <p style="font-size:var(--text-sm);color:hsl(var(--color-fg-muted))">
-                    We reply within one business day. No ghosting, ever.
-                </p>
-            </div>
-
-            <div style="background:hsl(var(--color-bg-surface));padding:var(--space-xl)">
-                <div class="label" style="margin-bottom:var(--space-sm)">Clear next steps</div>
-                <p style="font-size:var(--text-sm);color:hsl(var(--color-fg-muted))">
-                    After the consultation we'll send a detailed plan and timeline.
-                </p>
-            </div>
-
-        </div>
-
-        <!-- Team member -->
-        <div class="will-animate" style="margin-top:var(--space-2xl);display:flex;align-items:center;
-                justify-content:center;gap:var(--space-md)">
-            <img src="/images/george-stern.jpg" alt="George Stern, Client Success Manager" width="40" height="40"
-                style="width:40px;height:40px;border-radius:50%;object-fit:cover">
-            <div style="text-align:left">
-                <div style="font-size:var(--text-sm);font-weight:var(--weight-medium);
-                    color:hsl(var(--color-fg))">George Stern</div>
-                <div class="label">Client Success Manager</div>
-            </div>
-        </div>
-
     </div>
+</div>
 
+<!-- Contact / Let's talk section (dark) -->
+<section id="contact" class="section-dark py-[12vh]" aria-labelledby="cta-heading">
+<div class="container px-6 md:px-10 lg:px-14 max-w-[1520px] mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 xl:gap-28">
+
+        <!-- Left -->
+        <div>
+            <span class="section-label-dark">Have a project in mind?</span>
+            <h2 id="cta-heading" data-cta-heading class="text-4xl md:text-5xl font-semibold tracking-tighter text-white leading-tight mb-4" style="font-family:var(--font-display); letter-spacing:-0.05em;">Let's talk.</h2>
+            <p data-cta-subtext class="text-sm text-white/45 leading-relaxed mb-10">Tell us about your project—whether it's a website, SEO, or marketing.</p>
+            <div class="flex flex-col gap-5 mb-10">
+                <div class="flex items-start gap-4">
+                    <div class="w-1.5 h-1.5 rounded-full bg-white/35 mt-2 shrink-0"></div>
+                    <div>
+                        <div class="text-sm font-semibold text-white mb-1">Quick response.</div>
+                        <p class="text-sm text-white/35 leading-relaxed">If you're ready to create and collaborate, we'd love to hear from you.</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="w-1.5 h-1.5 rounded-full bg-white/35 mt-2 shrink-0"></div>
+                    <div>
+                        <div class="text-sm font-semibold text-white mb-1">Clear next steps.</div>
+                        <p class="text-sm text-white/35 leading-relaxed">After the consultation, we'll provide a detailed plan and timeline.</p>
+                    </div>
+                </div>
+            </div>
+            <a href="mailto:hello@fabrica.com" class="inline-flex items-center gap-4 py-3 px-5 rounded-2xl border border-white/[0.08] bg-white/[0.03] hover:border-white/[0.15] transition-all group" data-cta-button>
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=128&q=80" alt="Lauren Thompson" width="40" height="40" class="rounded-full w-10 h-10 object-cover">
+                <div class="flex flex-col">
+                    <span class="text-xs text-white/40">Team Lead at fabrica®</span>
+                    <span class="text-sm text-white font-semibold">Lauren Thompson</span>
+                </div>
+                <span class="text-xs text-white/40 group-hover:text-white transition-colors ml-2">Ask directly →</span>
+            </a>
+        </div>
+
+        <!-- Right: form -->
+        <div>
+            <form class="flex flex-col gap-5" onsubmit="event.preventDefault()">
+                <div>
+                    <label for="contact-name" class="block text-sm font-medium text-white/45 mb-2">Your name <span class="text-white">*</span></label>
+                    <input id="contact-name" type="text" required class="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3.5 text-sm text-white placeholder-white/20 outline-none focus:border-white/20 focus:bg-white/[0.06] transition-all" placeholder="Your name">
+                </div>
+                <div>
+                    <label for="contact-email" class="block text-sm font-medium text-white/45 mb-2">E-mail <span class="text-white">*</span></label>
+                    <input id="contact-email" type="email" required class="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3.5 text-sm text-white placeholder-white/20 outline-none focus:border-white/20 focus:bg-white/[0.06] transition-all" placeholder="hello@yourcompany.com">
+                </div>
+                <div>
+                    <label for="contact-message" class="block text-sm font-medium text-white/45 mb-2">Message</label>
+                    <textarea id="contact-message" rows="5" class="w-full bg-white/[0.04] border border-white/[0.08] rounded-xl px-4 py-3.5 text-sm text-white placeholder-white/20 outline-none focus:border-white/20 focus:bg-white/[0.06] transition-all resize-none" placeholder="Tell us about your project..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary-light w-full py-4 text-sm font-semibold">
+                    Send Message
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <p class="text-xs text-white/25 text-center">By submitting, you agree to our <a href="#" class="underline hover:text-white transition-colors">Terms</a> and <a href="#" class="underline hover:text-white transition-colors">Privacy Policy</a>.</p>
+            </form>
+        </div>
+    </div>
+</div>
 </section>
