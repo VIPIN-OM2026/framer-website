@@ -14,6 +14,7 @@ export default defineConfig({
       minify: true,
       inject: {
         data: {
+          title: 'fabrica® Studio',
           includeFile: (file) => {
             return fs.readFileSync(path.resolve(__dirname, file), 'utf-8');
           }
