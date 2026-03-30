@@ -1,0 +1,14 @@
+/* ─── Z-Index Scale ────────────────────────────────────────────────────────── */
+
+:root {
+    --z-below: -1;
+    --z-base: 0;
+    --z-raised: 10;
+    --z-float: 50;
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-overlay: 300;
+    --z-modal: 400;
+    --z-toast: 500;
+    --z-cursor: 900;
+}

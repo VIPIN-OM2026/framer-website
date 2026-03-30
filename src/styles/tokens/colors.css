@@ -1,0 +1,30 @@
+:root {
+    /* Blacks */
+    --color-black-50: hsl(0, 0%, 2%);
+    --color-black-100: hsl(0, 0%, 4%);
+    --color-black-200: hsl(0, 0%, 8%);
+    --color-black-300: hsl(0, 0%, 12%);
+
+    /* Whites */
+    --color-white-100: hsl(0, 0%, 98%);
+    --color-white-200: hsl(40, 20%, 96%);
+    --color-white-300: hsl(40, 15%, 92%);
+
+    /* Neutrals */
+    --color-neutral-100: hsl(40, 8%, 88%);
+    --color-neutral-200: hsl(40, 6%, 75%);
+    --color-neutral-300: hsl(40, 4%, 60%);
+    --color-neutral-400: hsl(40, 3%, 45%);
+    --color-neutral-500: hsl(40, 2%, 30%);
+    --color-neutral-600: hsl(40, 2%, 18%);
+
+    /* Accent — warm gold */
+    --color-accent-300: hsl(42, 100%, 70%);
+    --color-accent-400: hsl(42, 95%, 58%);
+    --color-accent-500: hsl(42, 90%, 48%);
+    --color-accent-600: hsl(38, 88%, 38%);
+
+    /* Feedback */
+    --color-error: hsl(4, 80%, 55%);
+    --color-success: hsl(145, 60%, 40%);
+}

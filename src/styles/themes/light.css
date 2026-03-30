@@ -1,0 +1,47 @@
+/* ─── Light Theme ──────────────────────────────────────────────────────────── */
+/* Applied when: [data-theme="light"] on <html>                                 */
+/* All values reference raw color tokens from tokens/colors.css                 */
+
+[data-theme='light'] {
+    /* Backgrounds */
+    --color-bg-primary: var(--color-white-100);
+    --color-bg-secondary: var(--color-white-200);
+    --color-bg-tertiary: var(--color-white-300);
+    --color-bg-inverse: var(--color-black-100);
+    --color-bg-surface: hsl(40, 15%, 97%);
+    --color-bg-elevated: hsl(0, 0%, 100%);
+
+    /* Text */
+    --color-text-primary: var(--color-black-100);
+    --color-text-secondary: var(--color-neutral-500);
+    --color-text-tertiary: var(--color-neutral-300);
+    --color-text-inverse: var(--color-white-100);
+    --color-text-accent: var(--color-accent-600);
+    --color-text-on-accent: var(--color-black-100);
+
+    /* Borders */
+    --color-border-subtle: hsl(40, 8%, 88%);
+    --color-border-default: hsl(40, 6%, 80%);
+    --color-border-strong: hsl(40, 5%, 65%);
+
+    /* Accent */
+    --color-accent: var(--color-accent-500);
+    --color-accent-hover: var(--color-accent-600);
+    --color-accent-muted: hsl(42, 95%, 92%);
+
+    /* Components */
+    --color-nav-bg: hsla(0, 0%, 98%, 0.88);
+    --color-card-bg: var(--color-white-100);
+    --color-card-border: var(--color-border-subtle);
+    --color-tag-bg: var(--color-white-300);
+    --color-tag-text: var(--color-neutral-500);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px hsla(0, 0%, 0%, 0.06), 0 1px 2px hsla(0, 0%, 0%, 0.04);
+    --shadow-md: 0 4px 16px hsla(0, 0%, 0%, 0.08), 0 2px 4px hsla(0, 0%, 0%, 0.04);
+    --shadow-lg: 0 16px 48px hsla(0, 0%, 0%, 0.12), 0 4px 12px hsla(0, 0%, 0%, 0.06);
+
+    /* Overlays */
+    --color-overlay: hsla(0, 0%, 0%, 0.4);
+    --color-scrim: hsla(0, 0%, 98%, 0.7);
+}

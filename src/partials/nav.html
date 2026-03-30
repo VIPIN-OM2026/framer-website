@@ -1,0 +1,43 @@
+<!-- SAVE AS: src/partials/nav.html -->
+<header id="nav" class="nav will-animate" role="banner">
+    <a href="/" class="nav__logo" aria-label="fabrica® Studio — Home">
+        fabrica<sup>®</sup>
+    </a>
+
+    <nav aria-label="Primary navigation">
+        <ul id="nav-links" class="nav__links" role="list">
+            <li><a href="#work" class="nav__link">Projects</a></li>
+            <li><a href="#services" class="nav__link">Services</a></li>
+            <li><a href="#about" class="nav__link">Studio</a></li>
+            <li><a href="#contact" class="nav__link">Blog</a></li>
+            <li>
+                <a href="#contact" class="nav__cta magnetic" data-magnetic>
+                    Let's talk
+                </a>
+            </li>
+            <li>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <!-- Sun icon (shown in dark mode) -->
+                    <svg id="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4" />
+                        <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42
+                     M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+                    </svg>
+                    <!-- Moon icon (shown in light mode) -->
+                    <svg id="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"
+                        style="display:none">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+                    </svg>
+                </button>
+            </li>
+        </ul>
+    </nav>
+
+    <button id="nav-toggle" class="nav__toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</header>

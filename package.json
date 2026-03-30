@@ -1,0 +1,22 @@
+{
+    "name": "fabrica-landing",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "lint": "eslint src --ext .js"
+    },
+    "dependencies": {
+        "gsap": "^3.12.5"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.19",
+        "postcss": "^8.4.38",
+        "tailwindcss": "^3.4.4",
+        "vite": "^5.3.1",
+        "vite-plugin-html": "^3.2.2"
+    }
+}
