@@ -49,7 +49,10 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: './dist'
+          name: fabrica-build
           
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          artifact_name: fabrica-build
