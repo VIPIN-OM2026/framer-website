@@ -10,16 +10,18 @@ const Nav = (root) => {
   const _navHeader = qs("#nav-header", document);
   const _menuItems = document.querySelectorAll("[data-menu-item]");
   
-  const _onScroll = throttle(() => {
+  const _onScroll = () => {
     const scrolled = window.scrollY > 40;
     if (_navHeader) {
-      // Use glassmorphism effect on scroll
-      _navHeader.classList.toggle("bg-[#f5f5f5]/90", scrolled);
+      // Apply frosted glass effect natively on scroll to match the true Fabrica layout.
+      // Text remains black permanently as defined in the HTML.
+      _navHeader.classList.toggle("bg-white/75", scrolled);
       _navHeader.classList.toggle("backdrop-blur-md", scrolled);
+      _navHeader.classList.toggle("shadow-sm", scrolled);
     }
     store.set("isNavScrolled", scrolled);
     store.set("scrollY", window.scrollY);
-  }, 100);
+  };
 
   const _setMenuOpen = (open) => {
     if (!_menuOverlay) return;
