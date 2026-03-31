@@ -13,8 +13,9 @@ const Nav = (root) => {
   const _onScroll = throttle(() => {
     const scrolled = window.scrollY > 40;
     if (_navHeader) {
-      // Use solid white background instead of reflection/blur
-      _navHeader.classList.toggle("bg-[#f5f5f5]", scrolled);
+      // Use glassmorphism effect on scroll
+      _navHeader.classList.toggle("bg-[#f5f5f5]/90", scrolled);
+      _navHeader.classList.toggle("backdrop-blur-md", scrolled);
     }
     store.set("isNavScrolled", scrolled);
     store.set("scrollY", window.scrollY);
